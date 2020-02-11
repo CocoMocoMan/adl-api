@@ -71,7 +71,7 @@ app.post('/users/update', (req, res) => {
           console.log(err);
           res.send('Error');
       }
-      res.send(result);
+      else res.send(result);
     });
   });
 
