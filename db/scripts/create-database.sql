@@ -1,9 +1,8 @@
 DROP DATABASE IF EXISTS adldb;
-CREATE DATABASE  IF NOT EXISTS adldb;
+CREATE DATABASE IF NOT EXISTS adldb;
 USE adldb;
 CREATE TABLE IF NOT EXISTS User (
 	UserID 	 int PRIMARY KEY auto_increment,
-    Username VARCHAR(50) UNIQUE NOT NULL,
     FirstName VARCHAR(50),
     LastName VARCHAR(50),
     Email         VARCHAR(50),

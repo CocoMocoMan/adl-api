@@ -5,10 +5,11 @@ const bodyParser = require('body-parser')
 const mysql = require('mysql');
 
 const con = mysql.createConnection({
-    host: "localhost",
+    host: process.env.DATABASE_HOST || '127.0.0.1',
     user: "root",
     password: "password",
-    database: "adldb"
+    database: "adldb",
+      port: 3306
 });
 
 con.connect(function(err) {
@@ -22,7 +23,6 @@ app.use(bodyParser.json());
 app.post('/users/create', (req, res) => {
   const user = req.body;
   const values = `null,
-                  '${user.username}',
                   '${user.firstname}',
                   '${user.lastname}',
                   '${user.email}',
@@ -58,7 +58,6 @@ app.post('/users/update', (req, res) => {
     const user = req.body;
     console.log(user);
     const query = `UPDATE User SET
-                    Username = '${user.username}',
                     FirstName = '${user.firstname}',
                     LastName = '${user.lastname}',
                     Email = '${user.email}',
