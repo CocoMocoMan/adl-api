@@ -22,6 +22,7 @@ app.use(bodyParser.json());
 
 app.post('/users/create', (req, res) => {
   const user = req.body;
+  console.log(user);
   const values = `null,
                   '${user.firstname}',
                   '${user.lastname}',
