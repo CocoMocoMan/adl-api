@@ -85,6 +85,18 @@ app.get('/users/delete', (req, res) => {
     });
   });
 
+  app.get('/users/login', (req, res) => {
+    const query = `SELECT UserID FROM User WHERE User.AccessToken = ${req.query.accesstoken} AND User.Active = true`;
+    con.query(query, (err, results) => {
+      if(err) {
+          console.log(err);
+          res.send('Error');
+      }
+      else if (results.length == 0) res.send('User Not Found');
+      else res.send(results[0]);
+    });
+  });
+
 
 
 
