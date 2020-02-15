@@ -1,0 +1,17 @@
+version: '3'
+services:
+  db:
+    command: --default-authentication-plugin=mysql_native_password
+    build: ./db
+  app:
+    command: npm start
+    build: ./app
+    ports:
+     - 80:80
+    environment:
+     - DATABASE_HOST=db
+    volumes:
+     - ./app:/app
+    depends_on: 
+     - db
+ 
