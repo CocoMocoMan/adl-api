@@ -1,2 +1,2 @@
-app/node-modules/*
+app/node-modules/
 app/package-lock.json
