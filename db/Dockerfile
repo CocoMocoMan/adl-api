@@ -5,3 +5,5 @@ ENV MYSQL_ROOT_PASSWORD password
 ENV MYSQL_PASSWORD password
 
 COPY ./scripts/ /docker-entrypoint-initdb.d/
+
+EXPOSE 3306
