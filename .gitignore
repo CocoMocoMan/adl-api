@@ -1,2 +1,3 @@
 app/node-modules/
 app/package-lock.json
+db/data
